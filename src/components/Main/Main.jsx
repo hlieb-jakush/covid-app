@@ -6,12 +6,14 @@ import CountryList from '../CountryList/CountryList'
 import world from '../../assets/flags/united-nations.svg'
 import './Main.scss'
 import DayList from '../DayList/DayList'
+import CountryFilter from '../CountryFilter/CountryFilter'
 
 
 const Main = ({ summary, country, onSetCountry }) => {
     return (
         <main>
             <Header icon={world} global={summary.Global} />
+            <Route exact path='/' render={() => <CountryFilter />} />
             <Route path='/:country' render={() => <section>FILTER</section>} />
             <section>
                 <Route exact path='/' render={() => <CountryList summary={summary} />} />
