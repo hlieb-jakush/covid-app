@@ -6,7 +6,7 @@ const DayList = ({ country, onSetCountry, match }) => {
 
     useEffect(() => {
         onSetCountry(match.params.country)
-    }, [])
+    }, [match.params.country])
 
     return (
         country ? (country.map((item, index) => (
