@@ -11,6 +11,15 @@
       border: 1px solid #F1F1F1;
       border-radius: 5px;
       box-sizing: border-box;
+
+    }
+
+    > section:first-of-type {
+      height: 150px;
+      margin-bottom: 20px;
+    }
+
+    > section:last-of-type {
       overflow: auto;
     }
   }

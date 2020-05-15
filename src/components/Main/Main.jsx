@@ -12,6 +12,7 @@ const Main = ({ summary, country, onSetCountry }) => {
     return (
         <main>
             <Header icon={world} global={summary.Global} />
+            <Route path='/:country' render={() => <section>FILTER</section>} />
             <section>
                 <Route exact path='/' render={() => <CountryList summary={summary} />} />
                 <Route path='/:country' render={() => <DayList country={country} onSetCountry={onSetCountry} />} />
