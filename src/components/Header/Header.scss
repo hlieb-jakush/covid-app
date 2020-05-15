@@ -1,0 +1,20 @@
+.covid-app {
+    main {
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #FFFFFF;
+            border: 1px solid #F1F1F1;
+            border-radius: 5px;
+            box-sizing: border-box;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}

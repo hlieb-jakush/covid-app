@@ -1,0 +1,29 @@
+.button {
+    display: flex;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #EEF3F6;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    span:first-of-type {
+        margin-right: 15px;
+    }
+
+    &:hover {
+        color: white;
+        background: lighten(#4D1ED3, 20%);
+    }
+
+    &:active {
+        color: white;
+        background: lighten(#4D1ED3, 10%);
+    }
+}

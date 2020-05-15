@@ -1,0 +1,17 @@
+.covid-app {
+  > main {
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+  
+    > section {
+      flex-grow: 1;
+      padding: 20px;
+      background-color: #FFFFFF;
+      border: 1px solid #F1F1F1;
+      border-radius: 5px;
+      box-sizing: border-box;
+      overflow: auto;
+    }
+  }
+}

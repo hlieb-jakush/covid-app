@@ -1,0 +1,31 @@
+* {
+  font-family: 'Roboto' , -apple-system, system-ui,  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #F5F6FA;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.covid-app {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  max-width: 1200px;
+  height: 80vh;
+}

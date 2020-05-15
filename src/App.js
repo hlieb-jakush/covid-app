@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { onInitialization } from './state/reducer'
+import Sidebar from './components/Sidebar/Sidebar'
+import Main from './components/Main/Main'
 
-function App() {
+function App({ initialized, onInitialization, summary }) {
+  useEffect(() => onInitialization(), [])
+
+  if (!initialized) return <div>Loading...</div>
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='covid-app'>
+      <Sidebar />
+      <Main summary={summary} />
     </div>
-  );
+  )
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.initialized,
+  summary: state.summary
+})
+
+export default connect(mapStateToProps, { onInitialization })(App)
