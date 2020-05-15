@@ -6,14 +6,32 @@
             justify-content: space-around;
             padding: 20px;
             margin-bottom: 20px;
-            background-color: #FFFFFF;
-            border: 1px solid #F1F1F1;
             border-radius: 5px;
             box-sizing: border-box;
+            background-color: #FFFFFF;
+            border: 1px solid #F1F1F1;
+            font-weight: 500;
 
             img {
                 width: 40px;
                 height: 40px;
+            }
+
+            span {
+                padding-bottom: 10px;
+                border-bottom: 3px solid;
+            }
+
+            span:nth-of-type(1) {
+                border-color: #4D1ED3;
+            }
+
+            span:nth-of-type(2) {
+                border-color: #72EBBA;
+            }
+
+            span:nth-of-type(3) {
+                border-color: #FC1946;
             }
         }
     }
