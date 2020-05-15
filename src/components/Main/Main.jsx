@@ -1,24 +1,20 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import Header from '../Header/Header'
-import CountrySection from '../CountrySection/CountrySection'
+import CountryList from '../CountryList/CountryList'
+
 import world from '../../assets/flags/united-nations.svg'
 import './Main.scss'
+import DayList from '../DayList/DayList'
 
-const Main = ({ summary }) => {
+
+const Main = ({ summary, country, onSetCountry }) => {
     return (
         <main>
             <Header icon={world} global={summary.Global} />
             <section>
-                {summary.Countries.map(item => (
-                    <CountrySection
-                        Country={item.Country}
-                        TotalConfirmed={item.TotalConfirmed}
-                        NewConfirmed={item.NewConfirmed}
-                        TotalDeaths={item.TotalDeaths}
-                        NewDeaths={item.NewDeaths}
-                        TotalRecovered={item.TotalRecovered}
-                        NewRecovered={item.NewRecovered} />)
-                )}
+                <Route exact path='/' render={() => <CountryList summary={summary} />} />
+                <Route path='/:country' render={() => <DayList country={country} onSetCountry={onSetCountry} />} />
             </section>
         </main>
     )
