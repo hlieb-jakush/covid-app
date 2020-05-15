@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import Button from '../../components/Button/Button'
 import world from '../../assets/flags/united-nations.svg'
 import belarus from '../../assets/flags/belarus.svg'
@@ -9,10 +10,10 @@ import './Sidebar.scss'
 const Sidebar = () => {
     return (
         <aside>
-            <Button icon={world} country='World' />
-            <Button icon={belarus} country='Belarus' />
-            <Button icon={ukraine} country='Ukraine' />
-            <Button icon={russia} country='Russia' />
+            <NavLink exact to='/' activeClassName="selected"><Button icon={world} country='World' /></NavLink>
+            <NavLink to='/belarus' activeClassName="selected"><Button icon={belarus} country='Belarus' /></NavLink>
+            <NavLink to='/ukraine' activeClassName="selected"><Button icon={ukraine} country='Ukraine' /></NavLink>
+            <NavLink to='/russia' activeClassName="selected"><Button icon={russia} country='Russia' /></NavLink>
         </aside>
     )
 }

@@ -7,6 +7,10 @@
         border: 1px solid #F1F1F1;
         border-radius: 5px;
         box-sizing: border-box;
-    
+
+        .selected .button{
+            color: white;
+            background: lighten(#4D1ED3, 10%);
+        }    
     }
 }
