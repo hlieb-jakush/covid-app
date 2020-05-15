@@ -2,7 +2,6 @@ import React from 'react'
 import './Header.scss'
 
 const Header = ({ icon, global }) => {
-    console.log(global)
     return (
         <header>
             <span><img src={icon} alt='flag' /></span>
