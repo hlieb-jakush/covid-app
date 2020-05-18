@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { onInitialization, onSetCountry } from './state/reducer'
+import { onInitialization, onSetCountry } from './state/thunks'
 import Sidebar from './components/Sidebar/Sidebar'
 import Main from './components/Main/Main'
 import { getInitStatus, getWorld, getCountriesFiltered, getDaysFiltered } from './state/selectors'

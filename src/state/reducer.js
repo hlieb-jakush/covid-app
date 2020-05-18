@@ -1,6 +1,7 @@
-import API from "./api"
-import { INITIALIZATION, SET_COUNTRY } from "./actions"
-import { initialization, setCountry } from "./actionCreators"
+import {
+    INITIALIZATION, SET_COUNTRY, COUNTRY_FILTER_ALPHABET,
+    COUNTRY_FILTER_CONFIRMED, COUNTRY_FILTER_RECOVERED, COUNTRY_FILTER_DEATH
+} from "./actions"
 
 const initialState = {
     world: null,
@@ -43,11 +44,3 @@ const appReducer = (state = initialState, action) => {
 }
 
 export default appReducer
-
-export const onInitialization = () => (dispatch) => {
-    API.getSummary().then(summary => dispatch(initialization(summary)))
-}
-
-export const onSetCountry = (country) => (dispatch) => {
-    API.getCountry(country).then(countryObj => dispatch(setCountry(countryObj)))
-}
