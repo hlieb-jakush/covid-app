@@ -1,13 +1,13 @@
 import React from 'react'
 import './Header.scss'
 
-const Header = ({ icon, global }) => {
+const Header = ({ icon, world }) => {
     return (
         <header>
             <img src={icon} alt='flag' />
-            <span>Confirmed: {global.TotalConfirmed} (+{global.NewConfirmed})</span>
-            <span>Recovered: {global.TotalRecovered} (+{global.NewRecovered})</span>
-            <span>Deaths: {global.TotalDeaths} (+{global.NewDeaths})</span>
+            <span>Confirmed: {world.TotalConfirmed} (+{world.NewConfirmed})</span>
+            <span>Recovered: {world.TotalRecovered} (+{world.NewRecovered})</span>
+            <span>Deaths: {world.TotalDeaths} (+{world.NewDeaths})</span>
         </header>
     )
 }

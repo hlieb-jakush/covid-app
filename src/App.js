@@ -3,26 +3,28 @@ import { connect } from 'react-redux'
 import { onInitialization, onSetCountry } from './state/reducer'
 import Sidebar from './components/Sidebar/Sidebar'
 import Main from './components/Main/Main'
+import { getInitStatus, getWorld, getCountriesFiltered, getDaysFiltered } from './state/selectors'
 
-function App({ initialized, onInitialization, onSetCountry, summary, country }) {
+function App({ isInit, world, countriesList, daysList, onInitialization, onSetCountry }) {
   useEffect(() => {
     onInitialization()
   }, [])
 
-  if (!initialized) return <div>Loading...</div>
+  if (!isInit) return <div>Loading...</div>
 
   return (
     <div className='covid-app'>
       <Sidebar />
-      <Main summary={summary} country={country} onSetCountry={onSetCountry} />
+      <Main world={world} countriesList={countriesList} daysList={daysList} onSetCountry={onSetCountry} />
     </div>
   )
 }
 
 const mapStateToProps = (state) => ({
-  initialized: state.initialized,
-  summary: state.summary,
-  country: state.currentCountry
+  isInit: getInitStatus(state),
+  world: getWorld(state),
+  countriesList: getCountriesFiltered(state),
+  daysList: getDaysFiltered(state)
 })
 
 export default connect(mapStateToProps, { onInitialization, onSetCountry })(App)

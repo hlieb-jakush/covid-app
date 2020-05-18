@@ -3,21 +3,21 @@ import { Route } from 'react-router-dom'
 import Header from '../Header/Header'
 import CountryList from '../CountryList/CountryList'
 
-import world from '../../assets/flags/united-nations.svg'
+import worldIcon from '../../assets/flags/united-nations.svg'
 import './Main.scss'
 import DayList from '../DayList/DayList'
 import CountryFilter from '../CountryFilter/CountryFilter'
 
 
-const Main = ({ summary, country, onSetCountry }) => {
+const Main = ({ world, countriesList, daysList, onSetCountry }) => {
     return (
         <main>
-            <Header icon={world} global={summary.Global} />
+            <Header icon={worldIcon} world={world} />
             <Route exact path='/' render={() => <CountryFilter />} />
             <Route path='/:country' render={() => <section>FILTER</section>} />
             <section>
-                <Route exact path='/' render={() => <CountryList summary={summary} />} />
-                <Route path='/:country' render={() => <DayList country={country} onSetCountry={onSetCountry} />} />
+                <Route exact path='/' render={() => <CountryList countriesList={countriesList} />} />
+                <Route path='/:country' render={() => <DayList daysList={daysList} onSetCountry={onSetCountry} />} />
             </section>
         </main>
     )

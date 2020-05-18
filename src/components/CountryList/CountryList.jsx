@@ -2,9 +2,9 @@ import React from 'react'
 import CountrySection from '../CountrySection/CountrySection'
 import { NavLink } from 'react-router-dom'
 
-const CountryList = ({ summary }) => {
+const CountryList = ({ countriesList }) => {
     return (
-        summary.Countries.map(item => (
+        countriesList.map(item => (
             <NavLink to={`/${item.Country}`}>
                 <CountrySection
                     key={item.Country}

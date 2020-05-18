@@ -1,12 +1,18 @@
 import API from "./api"
-
-const INITIALIZATION = 'INITIALIZATION'
-const SET_COUNTRY = 'SET_COUNTRY'
+import { INITIALIZATION, SET_COUNTRY } from "./actions"
+import { initialization, setCountry } from "./actionCreators"
 
 const initialState = {
-    summary: {},
-    currentCountry: [],
-    initialized: false
+    world: null,
+    countriesList: {
+        original: null,
+        filtered: null
+    },
+    daysList: {
+        original: null,
+        filtered: null
+    },
+    isInit: false
 }
 
 const appReducer = (state = initialState, action) => {
@@ -14,14 +20,21 @@ const appReducer = (state = initialState, action) => {
         case INITIALIZATION:
             return {
                 ...state,
-                summary: { ...action.summary },
-                initialized: true
+                world: { ...action.summary.Global },
+                countriesList: {
+                    original: [...action.summary.Countries],
+                    filtered: [...action.summary.Countries]
+                },
+                isInit: true
             }
 
         case SET_COUNTRY:
             return {
                 ...state,
-                currentCountry: [...action.countryObj]
+                daysList: {
+                    original: [...action.countryObj],
+                    filtered: [...action.countryObj]
+                },
             }
 
         default:
@@ -30,10 +43,6 @@ const appReducer = (state = initialState, action) => {
 }
 
 export default appReducer
-
-const initialization = (summary) => ({ type: INITIALIZATION, summary })
-const setCountry = (countryObj) => ({ type: SET_COUNTRY, countryObj })
-
 
 export const onInitialization = () => (dispatch) => {
     API.getSummary().then(summary => dispatch(initialization(summary)))
