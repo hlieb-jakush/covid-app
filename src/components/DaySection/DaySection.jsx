@@ -1,13 +1,13 @@
 import React from 'react'
 import './DaySection.scss'
 
-const DaySection = ({ CountryCode, Day, Confirmed, Recovered, Deaths }) => {
+const DaySection = ({ CountryCode, Day, Confirmed, Recovered, Deaths, numberConverter }) => {
     return (
         <section className='country-section'>
             <span>{CountryCode} Day: {Day}</span>
-            <span>Confirmed: {Confirmed}</span>
-            <span>Recovered: {Recovered}</span>
-            <span>Deaths: {Deaths}</span>
+            <span>Confirmed: {numberConverter(Confirmed)}</span>
+            <span>Recovered: {numberConverter(Recovered)}</span>
+            <span>Deaths: {numberConverter(Deaths)}</span>
         </section>
     )
 }

@@ -4,8 +4,11 @@ import { onInitialization, onSetCountry } from './state/thunks'
 import Sidebar from './components/Sidebar/Sidebar'
 import Main from './components/Main/Main'
 import { getInitStatus, getWorld, getCountriesFiltered, getDaysFiltered } from './state/selectors'
+import { setCountryFilterAlphabet, setCountryFilterConfirmed, setCountryFilterDeath, setCountryFilterRecovered } from './state/actionCreators'
+import { numberConverter } from './tools/numberConverter'
 
-function App({ isInit, world, countriesList, daysList, onInitialization, onSetCountry }) {
+function App({ isInit, onInitialization, ...props }) {
+
   useEffect(() => {
     onInitialization()
   }, [])
@@ -15,7 +18,7 @@ function App({ isInit, world, countriesList, daysList, onInitialization, onSetCo
   return (
     <div className='covid-app'>
       <Sidebar />
-      <Main world={world} countriesList={countriesList} daysList={daysList} onSetCountry={onSetCountry} />
+      <Main {...props} numberConverter={numberConverter} />
     </div>
   )
 }
@@ -27,4 +30,4 @@ const mapStateToProps = (state) => ({
   daysList: getDaysFiltered(state)
 })
 
-export default connect(mapStateToProps, { onInitialization, onSetCountry })(App)
+export default connect(mapStateToProps, { onInitialization, onSetCountry, setCountryFilterAlphabet, setCountryFilterConfirmed, setCountryFilterDeath, setCountryFilterRecovered })(App)

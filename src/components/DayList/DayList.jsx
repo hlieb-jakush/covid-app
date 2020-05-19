@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import DaySection from '../DaySection/DaySection'
 import { withRouter } from 'react-router-dom'
 
-const DayList = ({ daysList, onSetCountry, match }) => {
+const DayList = ({ daysList, onSetCountry, match, numberConverter }) => {
 
     useEffect(() => {
         onSetCountry(match.params.country)
@@ -17,6 +17,7 @@ const DayList = ({ daysList, onSetCountry, match }) => {
                 Confirmed={item.Confirmed}
                 Recovered={item.Recovered}
                 Deaths={item.Deaths}
+                numberConverter={numberConverter}
             />)
         )) : 'Loading...'
     )

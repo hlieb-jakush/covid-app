@@ -2,7 +2,7 @@ import React from 'react'
 import CountrySection from '../CountrySection/CountrySection'
 import { NavLink } from 'react-router-dom'
 
-const CountryList = ({ countriesList }) => {
+const CountryList = ({ countriesList, numberConverter }) => {
     return (
         countriesList.map(item => (
             <NavLink to={`/${item.Country}`}>
@@ -15,6 +15,7 @@ const CountryList = ({ countriesList }) => {
                     NewDeaths={item.NewDeaths}
                     TotalRecovered={item.TotalRecovered}
                     NewRecovered={item.NewRecovered}
+                    numberConverter={numberConverter}
                 />
             </NavLink>)
         )
