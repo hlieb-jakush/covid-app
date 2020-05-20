@@ -4,7 +4,6 @@ import { onInitialization, onSetCountry } from './state/thunks'
 import Sidebar from './components/Sidebar/Sidebar'
 import Main from './components/Main/Main'
 import { getInitStatus, getWorld, getCountriesFiltered, getDaysFiltered } from './state/selectors'
-import { setCountryFilterAlphabet, setCountryFilterConfirmed, setCountryFilterDeath, setCountryFilterRecovered } from './state/actionCreators'
 import { numberConverter } from './tools/numberConverter'
 
 function App({ isInit, onInitialization, ...props }) {
@@ -30,4 +29,4 @@ const mapStateToProps = (state) => ({
   daysList: getDaysFiltered(state)
 })
 
-export default connect(mapStateToProps, { onInitialization, onSetCountry, setCountryFilterAlphabet, setCountryFilterConfirmed, setCountryFilterDeath, setCountryFilterRecovered })(App)
+export default connect(mapStateToProps, { onInitialization, onSetCountry })(App)
