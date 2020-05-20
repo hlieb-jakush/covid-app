@@ -7,7 +7,7 @@ const API = {
         return instance.get('summary').then(response => response.data)
     },
     getCountry(country) {
-        return instance.get(`dayone/country/${country}`).then(response => response.data)
+        return instance.get(`total/country/${country}`).then(response => response.data)
     }
 }
 
