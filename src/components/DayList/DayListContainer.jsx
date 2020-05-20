@@ -12,7 +12,7 @@ const DayListContainer = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    countriesList: getDaysFiltered(state)
+    daysList: getDaysFiltered(state)
 })
 
 export default connect(mapStateToProps, { onSetCountry })(DayListContainer)
