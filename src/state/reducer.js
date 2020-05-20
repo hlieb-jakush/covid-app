@@ -1,6 +1,7 @@
 import {
-    INITIALIZATION, SET_COUNTRY, COUNTRY_FILTER_ALPHABET,
-    COUNTRY_FILTER_CONFIRMED, COUNTRY_FILTER_RECOVERED, COUNTRY_FILTER_DEATH
+    INITIALIZATION, SET_COUNTRY,
+    COUNTRY_FILTER_ALPHABET, COUNTRY_FILTER_CONFIRMED, COUNTRY_FILTER_RECOVERED, COUNTRY_FILTER_DEATH,
+    DAYS_FILTER_DEFAULT, DAYS_FILTER_REVERSE
 } from "./actions"
 
 const initialState = {
@@ -71,6 +72,24 @@ const appReducer = (state = initialState, action) => {
                 countriesList: {
                     ...state.countriesList,
                     filtered: [...state.countriesList.filtered.sort((a, b) => b.TotalDeaths - a.TotalDeaths)]
+                },
+            }
+
+        case DAYS_FILTER_DEFAULT:
+            return {
+                ...state,
+                daysList: {
+                    ...state.daysList,
+                    filtered: [...state.countriesList.original]
+                },
+            }
+
+        case DAYS_FILTER_REVERSE:
+            return {
+                ...state,
+                daysList: {
+                    ...state.daysList,
+                    filtered: [...state.countriesList.filtered.reverse()]
                 },
             }
 
