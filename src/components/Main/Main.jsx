@@ -7,6 +7,7 @@ import worldIcon from '../../assets/flags/united-nations.svg'
 import './Main.scss'
 import DayList from '../DayList/DayList'
 import CountryFilter from '../CountryFilter/CountryFilter'
+import DayFilter from '../DayFilter/DayFilter'
 
 
 const Main = ({ world, countriesList, daysList, onSetCountry, setCountryFilterAlphabet, setCountryFilterConfirmed, setCountryFilterDeath, setCountryFilterRecovered, numberConverter }) => {
@@ -23,7 +24,7 @@ const Main = ({ world, countriesList, daysList, onSetCountry, setCountryFilterAl
                 setCountryFilterDeath={setCountryFilterDeath}
                 setCountryFilterRecovered={setCountryFilterRecovered}
             />} />
-            <Route path='/:country' render={() => <section>FILTER</section>} />
+            <Route path='/:country' render={() => <DayFilter />} />
             <section>
                 <Route exact path='/' render={() => <CountryList
                     countriesList={countriesList}
