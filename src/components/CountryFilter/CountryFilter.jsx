@@ -1,15 +1,15 @@
 import React from 'react'
 import './CountryFilter.scss'
 
-const CountryFilter = ({ setCountryFilterAlphabet, setCountryFilterConfirmed, setCountryFilterRecovered, setCountryFilterDeath }) => {
+const CountryFilter = ({ activeButton, setDefaultFilter, setConfirmedFilter, setRecoveredFilter, setDeathFilter }) => {
     return (
         <section className='filter'>
             <span>
                 <span>Sorted by:</span>
-                <button onClick={setCountryFilterAlphabet}>Default</button>
-                <button onClick={setCountryFilterConfirmed}>Confirmed</button>
-                <button onClick={setCountryFilterRecovered}>Recovered</button>
-                <button onClick={setCountryFilterDeath}>Deaths</button>
+                <button className={activeButton === 'default' ? 'selected' : null} onClick={setDefaultFilter}>Default</button>
+                <button className={activeButton === 'confirmed' ? 'selected' : null} onClick={setConfirmedFilter}>Confirmed</button>
+                <button className={activeButton === 'recovered' ? 'selected' : null} onClick={setRecoveredFilter}>Recovered</button>
+                <button className={activeButton === 'death' ? 'selected' : null} onClick={setDeathFilter}>Deaths</button>
             </span>
             <span>
                 <input placeholder='Country title...' />
