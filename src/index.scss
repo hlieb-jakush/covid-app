@@ -50,6 +50,11 @@ button {
       color: white;
       background: lighten(#4D1ED3, 10%);
   }
+
+  &.selected{
+    color: white;
+    background: lighten(#4D1ED3, 10%);
+}
 }
 
 input {
