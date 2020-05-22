@@ -80,7 +80,7 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 daysList: {
                     ...state.daysList,
-                    filtered: [...state.countriesList.original]
+                    filtered: [...state.daysList.original]
                 },
             }
 
@@ -89,7 +89,7 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 daysList: {
                     ...state.daysList,
-                    filtered: [...state.countriesList.filtered.reverse()]
+                    filtered: [...state.daysList.filtered.reverse()]
                 },
             }
 
