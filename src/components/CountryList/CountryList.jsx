@@ -5,9 +5,8 @@ import { NavLink } from 'react-router-dom'
 const CountryList = ({ countriesList, numberConverter }) => {
     return (
         countriesList.map(item => (
-            <NavLink to={`/${item.Slug}`}>
+            <NavLink to={`/${item.Slug}`} key={item.Country}>
                 <CountrySection
-                    key={item.Country}
                     Country={item.Country}
                     TotalConfirmed={item.TotalConfirmed}
                     NewConfirmed={item.NewConfirmed}
