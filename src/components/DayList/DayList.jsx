@@ -9,10 +9,9 @@ const DayList = ({ daysList, onSetCountry, match, numberConverter, dateConverter
     }, [match.params.country])
 
     return (
-        daysList ? (daysList.map((item, index) => (
+        daysList ? (daysList.map(item => (
             <DaySection
-                key={index}
-                CountryCode={item.CountryCode}
+                key={item.Date}
                 Day={item.Date}
                 Confirmed={item.Confirmed}
                 Recovered={item.Recovered}
