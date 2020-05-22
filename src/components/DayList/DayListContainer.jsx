@@ -4,10 +4,11 @@ import DayList from './DayList'
 import { getDaysFiltered } from '../../state/selectors'
 import { onSetCountry } from '../../state/thunks'
 import { numberConverter } from '../../tools/numberConverter'
+import { dateConverter } from '../../tools/dateConverter'
 
 const DayListContainer = (props) => {
     return (
-        <DayList {...props} numberConverter={numberConverter} />
+        <DayList {...props} numberConverter={numberConverter} dateConverter={dateConverter} />
     )
 }
 
