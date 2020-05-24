@@ -1,18 +1,15 @@
 import React from 'react'
-import './CountryFilter.scss'
 
-const CountryFilter = ({ activeButton, setDefaultFilter, setConfirmedFilter, setRecoveredFilter, setDeathFilter }) => {
+const CountryFilter = ({ activeButton, setDefaultFilter, setReverseFilter }) => {
     return (
-        <section className='filter'>
+        <section className='covid-app__section covid-app__filter'>
             <span>
                 <span>Sorted by:</span>
                 <button className={activeButton === 'default' ? 'selected' : null} onClick={setDefaultFilter}>Default</button>
-                <button className={activeButton === 'confirmed' ? 'selected' : null} onClick={setConfirmedFilter}>Confirmed</button>
-                <button className={activeButton === 'recovered' ? 'selected' : null} onClick={setRecoveredFilter}>Recovered</button>
-                <button className={activeButton === 'death' ? 'selected' : null} onClick={setDeathFilter}>Deaths</button>
+                <button className={activeButton === 'reverse' ? 'selected' : null} onClick={setReverseFilter}>Reverse</button>
             </span>
             <span>
-                <input placeholder='Country title...' />
+                <input placeholder='Day number...' />
                 <button>Search</button>
             </span>
         </section>

@@ -1,9 +1,8 @@
 import React from 'react'
-import './CountrySection.scss'
 
-const CountrySection = ({ Country, TotalConfirmed, NewConfirmed, TotalDeaths, NewDeaths, TotalRecovered, NewRecovered, numberConverter }) => {
+const WorldListItem = ({ Country, TotalConfirmed, NewConfirmed, TotalDeaths, NewDeaths, TotalRecovered, NewRecovered, numberConverter }) => {
     return (
-        <section className='country-section'>
+        <section className='covid-app__list-item'>
             <span>{Country}</span>
             <span>Confirmed: {numberConverter(TotalConfirmed)} (+{numberConverter(NewConfirmed)})</span>
             <span>Recovered: {numberConverter(TotalRecovered)} (+{numberConverter(NewRecovered)})</span>
@@ -12,4 +11,4 @@ const CountrySection = ({ Country, TotalConfirmed, NewConfirmed, TotalDeaths, Ne
     )
 }
 
-export default CountrySection
+export default WorldListItem

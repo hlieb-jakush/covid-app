@@ -1,16 +1,9 @@
-.covid-app {
-    > aside {
-        width: 300px;
-        padding: 20px;
-        margin-right: 20px;
-        background-color: #FFFFFF;
-        border: 1px solid #F1F1F1;
-        border-radius: 5px;
-        box-sizing: border-box;
+.covid-app__sidebar {
+    width: 300px;
+    margin-right: 20px;
 
-        .selected .button{
-            color: white;
-            background: lighten(#4D1ED3, 10%);
-        }    
+    .selected .sidebar__button{
+        color: white;
+        background: lighten(#4D1ED3, 10%);
     }
 }

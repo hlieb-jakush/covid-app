@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import CountryFilter from './CountryFilter'
 import { connect } from 'react-redux'
-import { setCountryFilterAlphabet, setCountryFilterConfirmed, setCountryFilterRecovered, setCountryFilterDeath } from '../../state/actionCreators'
+import { setDaysFilterDefault, setDaysFilterReverse } from '../../state/actionCreators'
 
-const CountryFilterContainer = ({ setCountryFilterAlphabet, setCountryFilterConfirmed, setCountryFilterRecovered, setCountryFilterDeath }) => {
+const CountryFilterContainer = ({ setDaysFilterDefault, setDaysFilterReverse }) => {
     const [activeButton, setActiveButton] = useState('default')
 
     const setFilter = (func, name) => {
@@ -12,35 +12,23 @@ const CountryFilterContainer = ({ setCountryFilterAlphabet, setCountryFilterConf
     }
 
     const setDefaultFilter = () => {
-        setFilter(setCountryFilterAlphabet, 'default')
+        setFilter(setDaysFilterDefault, 'default')
     }
 
-    const setConfirmedFilter = () => {
-        setFilter(setCountryFilterConfirmed, 'confirmed')
-    }
-
-    const setRecoveredFilter = () => {
-        setFilter(setCountryFilterRecovered, 'recovered')
-    }
-
-    const setDeathFilter = () => {
-        setFilter(setCountryFilterDeath, 'death')
+    const setReverseFilter = () => {
+        setFilter(setDaysFilterReverse, 'reverse')
     }
 
     return (
         <CountryFilter
             activeButton={activeButton}
             setDefaultFilter={setDefaultFilter}
-            setConfirmedFilter={setConfirmedFilter}
-            setRecoveredFilter={setRecoveredFilter}
-            setDeathFilter={setDeathFilter}
+            setReverseFilter={setReverseFilter}
         />
     )
 }
 
 export default connect(null, {
-    setCountryFilterAlphabet,
-    setCountryFilterConfirmed,
-    setCountryFilterRecovered,
-    setCountryFilterDeath
+    setDaysFilterDefault,
+    setDaysFilterReverse
 })(CountryFilterContainer)

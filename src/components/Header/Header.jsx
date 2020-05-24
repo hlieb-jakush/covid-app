@@ -3,7 +3,7 @@ import './Header.scss'
 
 const Header = ({ icon, world, numberConverter }) => {
     return (
-        <header>
+        <header className='covid-app__section covid-app__header'>
             <img src={icon} alt='flag' />
             <span>Confirmed: {numberConverter(world.TotalConfirmed)} (+{numberConverter(world.NewConfirmed)})</span>
             <span>Recovered: {numberConverter(world.TotalRecovered)} (+{numberConverter(world.NewRecovered)})</span>

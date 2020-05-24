@@ -1,38 +1,29 @@
-.covid-app {
-    main {
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-sizing: border-box;
-            background-color: #FFFFFF;
-            border: 1px solid #F1F1F1;
-            font-weight: 500;
+.covid-app__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 500;
+    margin-bottom: 15px;
 
-            img {
-                width: 40px;
-                height: 40px;
-            }
+    img {
+        width: 40px;
+        height: 40px;
+    }
 
-            span {
-                padding-bottom: 10px;
-                border-bottom: 3px solid;
-            }
+    span {
+        padding-bottom: 10px;
+        border-bottom: 3px solid;
+    }
 
-            span:nth-of-type(1) {
-                border-color: #4D1ED3;
-            }
+    span:nth-of-type(1) {
+        border-color: #4D1ED3;
+    }
 
-            span:nth-of-type(2) {
-                border-color: #72EBBA;
-            }
+    span:nth-of-type(2) {
+        border-color: #72EBBA;
+    }
 
-            span:nth-of-type(3) {
-                border-color: #FC1946;
-            }
-        }
+    span:nth-of-type(3) {
+        border-color: #FC1946;
     }
 }

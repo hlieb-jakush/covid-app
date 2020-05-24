@@ -1,9 +1,8 @@
 import React from 'react'
-import './DaySection.scss'
 
-const DaySection = ({ Day, Confirmed, Recovered, Deaths, numberConverter, dateConverter }) => {
+const CountryListItem = ({ Day, Confirmed, Recovered, Deaths, numberConverter, dateConverter }) => {
     return (
-        <section className='country-section'>
+        <section className='covid-app__list-item'>
             <span>{dateConverter(Day)}</span>
             <span>Confirmed: {numberConverter(Confirmed)}</span>
             <span>Recovered: {numberConverter(Recovered)}</span>
@@ -12,4 +11,4 @@ const DaySection = ({ Day, Confirmed, Recovered, Deaths, numberConverter, dateCo
     )
 }
 
-export default DaySection
+export default CountryListItem

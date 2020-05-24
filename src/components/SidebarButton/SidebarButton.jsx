@@ -1,14 +1,13 @@
 import React from 'react'
-import './Button.scss'
+import './SidebarButton.scss'
 
-
-const Button = ({ icon, country }) => {
+const SidebarButton = ({ icon, country }) => {
     return (
-        <div className='button'>
+        <div className='sidebar__button'>
             <span><img src={icon} alt='flag' /></span>
             <span>{country}</span>
         </div>
     )
 }
 
-export default Button
+export default SidebarButton
