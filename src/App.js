@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { onInitialization, onSetCountry } from './state/thunks'
 import Sidebar from './components/Sidebar/Sidebar'
 import Main from './components/Main/Main'
-import { getInitStatus, getWorld, getCountriesFiltered, getDaysFiltered } from './state/selectors'
+import { getInitStatus, getWorld } from './state/selectors'
 import { numberConverter } from './tools/numberConverter'
 
 function App({ isInit, onInitialization, ...props }) {
@@ -24,9 +24,7 @@ function App({ isInit, onInitialization, ...props }) {
 
 const mapStateToProps = (state) => ({
   isInit: getInitStatus(state),
-  world: getWorld(state),
-  countriesList: getCountriesFiltered(state),
-  daysList: getDaysFiltered(state)
+  world: getWorld(state)
 })
 
 export default connect(mapStateToProps, { onInitialization, onSetCountry })(App)
