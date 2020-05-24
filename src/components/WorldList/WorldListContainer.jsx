@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import WorldList from './WorldList'
-import { getCountriesFiltered } from '../../state/selectors'
+import { getWorldListFiltered } from '../../state/selectors'
 import { numberConverter } from '../../tools/numberConverter'
 
 const WorldListContainer = (props) => {
@@ -11,7 +11,7 @@ const WorldListContainer = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    countriesList: getCountriesFiltered(state)
+    worldList: getWorldListFiltered(state)
 })
 
 export default connect(mapStateToProps, null)(WorldListContainer)

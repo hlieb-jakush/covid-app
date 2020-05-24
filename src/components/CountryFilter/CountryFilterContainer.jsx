@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import CountryFilter from './CountryFilter'
 import { connect } from 'react-redux'
-import { setDaysFilterDefault, setDaysFilterReverse } from '../../state/actionCreators'
+import { setCountryFilterDefault, setCountryFilterReverse } from '../../state/actionCreators'
 
-const CountryFilterContainer = ({ setDaysFilterDefault, setDaysFilterReverse }) => {
+const CountryFilterContainer = ({ setCountryFilterDefault, setCountryFilterReverse }) => {
     const [activeButton, setActiveButton] = useState('default')
 
     const setFilter = (func, name) => {
@@ -12,11 +12,11 @@ const CountryFilterContainer = ({ setDaysFilterDefault, setDaysFilterReverse }) 
     }
 
     const setDefaultFilter = () => {
-        setFilter(setDaysFilterDefault, 'default')
+        setFilter(setCountryFilterDefault, 'default')
     }
 
     const setReverseFilter = () => {
-        setFilter(setDaysFilterReverse, 'reverse')
+        setFilter(setCountryFilterReverse, 'reverse')
     }
 
     return (
@@ -29,6 +29,6 @@ const CountryFilterContainer = ({ setDaysFilterDefault, setDaysFilterReverse }) 
 }
 
 export default connect(null, {
-    setDaysFilterDefault,
-    setDaysFilterReverse
+    setCountryFilterDefault,
+    setCountryFilterReverse
 })(CountryFilterContainer)

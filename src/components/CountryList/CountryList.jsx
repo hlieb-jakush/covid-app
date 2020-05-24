@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import CountryListItem from '../CountryListItem/CountryListItem'
 import { withRouter } from 'react-router-dom'
 
-const CountryList = ({ daysList, onSetCountry, match, numberConverter, dateConverter }) => {
+const CountryList = ({ countryList, onSetCountry, match, numberConverter, dateConverter }) => {
 
     useEffect(() => {
         onSetCountry(match.params.country)
@@ -11,7 +11,7 @@ const CountryList = ({ daysList, onSetCountry, match, numberConverter, dateConve
     return (
         <section className='covid-app__section covid-app__section_list'>
             {
-                daysList ? (daysList.map(item => (
+                countryList ? (countryList.map(item => (
                     <CountryListItem
                         key={item.Date}
                         Day={item.Date}

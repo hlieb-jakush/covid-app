@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import WorldFilter from './WorldFilter'
 import { connect } from 'react-redux'
-import { setCountryFilterAlphabet, setCountryFilterConfirmed, setCountryFilterRecovered, setCountryFilterDeath } from '../../state/actionCreators'
+import {
+    setWorldFilterDefault, setWorldFilterConfirmed,
+    setWorldFilterRecovered, setWorldFilterDeath
+} from '../../state/actionCreators'
 
-const CountryFilterContainer = ({ setCountryFilterAlphabet, setCountryFilterConfirmed, setCountryFilterRecovered, setCountryFilterDeath }) => {
+const CountryFilterContainer = ({ setWorldFilterDefault, setWorldFilterConfirmed, setWorldFilterRecovered, setWorldFilterDeath }) => {
     const [activeButton, setActiveButton] = useState('default')
 
     const setFilter = (func, name) => {
@@ -12,19 +15,19 @@ const CountryFilterContainer = ({ setCountryFilterAlphabet, setCountryFilterConf
     }
 
     const setDefaultFilter = () => {
-        setFilter(setCountryFilterAlphabet, 'default')
+        setFilter(setWorldFilterDefault, 'default')
     }
 
     const setConfirmedFilter = () => {
-        setFilter(setCountryFilterConfirmed, 'confirmed')
+        setFilter(setWorldFilterConfirmed, 'confirmed')
     }
 
     const setRecoveredFilter = () => {
-        setFilter(setCountryFilterRecovered, 'recovered')
+        setFilter(setWorldFilterRecovered, 'recovered')
     }
 
     const setDeathFilter = () => {
-        setFilter(setCountryFilterDeath, 'death')
+        setFilter(setWorldFilterDeath, 'death')
     }
 
     return (
@@ -39,8 +42,8 @@ const CountryFilterContainer = ({ setCountryFilterAlphabet, setCountryFilterConf
 }
 
 export default connect(null, {
-    setCountryFilterAlphabet,
-    setCountryFilterConfirmed,
-    setCountryFilterRecovered,
-    setCountryFilterDeath
+    setWorldFilterDefault,
+    setWorldFilterConfirmed,
+    setWorldFilterRecovered,
+    setWorldFilterDeath
 })(CountryFilterContainer)

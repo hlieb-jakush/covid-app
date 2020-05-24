@@ -2,11 +2,11 @@ import React from 'react'
 import WorldListItem from '../WorldListItem/WorldListItem'
 import { NavLink } from 'react-router-dom'
 
-const WorldList = ({ countriesList, numberConverter }) => {
+const WorldList = ({ worldList, numberConverter }) => {
     return (
         <section className='covid-app__section covid-app__section_list'>
             {
-                countriesList.map(item => (
+                worldList.map(item => (
                     <NavLink to={`/${item.Slug}`} key={item.Country}>
                         <WorldListItem
                             Country={item.Country}

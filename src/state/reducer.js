@@ -1,16 +1,16 @@
 import {
     INITIALIZATION, SET_COUNTRY,
-    COUNTRY_FILTER_ALPHABET, COUNTRY_FILTER_CONFIRMED, COUNTRY_FILTER_RECOVERED, COUNTRY_FILTER_DEATH,
-    DAYS_FILTER_DEFAULT, DAYS_FILTER_REVERSE
+    WORLD_FILTER_DEFAULT, WORLD_FILTER_CONFIRMED, WORLD_FILTER_RECOVERED, WORLD_FILTER_DEATH,
+    COUNTRY_FILTER_DEFAULT, COUNTRY_FILTER_REVERSE
 } from "./actions"
 
 const initialState = {
     world: null,
-    countriesList: {
+    worldList: {
         original: null,
         filtered: null
     },
-    daysList: {
+    countryList: {
         original: null,
         filtered: null
     },
@@ -23,7 +23,7 @@ const appReducer = (state = initialState, action) => {
             return {
                 ...state,
                 world: { ...action.summary.Global },
-                countriesList: {
+                worldList: {
                     original: [...action.summary.Countries],
                     filtered: [...action.summary.Countries]
                 },
@@ -33,63 +33,63 @@ const appReducer = (state = initialState, action) => {
         case SET_COUNTRY:
             return {
                 ...state,
-                daysList: {
+                countryList: {
                     original: [...action.countryObj],
                     filtered: [...action.countryObj]
                 },
             }
 
-        case COUNTRY_FILTER_ALPHABET:
+        case WORLD_FILTER_DEFAULT:
             return {
                 ...state,
-                countriesList: {
-                    ...state.countriesList,
-                    filtered: [...state.countriesList.original]
+                worldList: {
+                    ...state.worldList,
+                    filtered: [...state.worldList.original]
                 },
             }
 
-        case COUNTRY_FILTER_CONFIRMED:
+        case WORLD_FILTER_CONFIRMED:
             return {
                 ...state,
-                countriesList: {
-                    ...state.countriesList,
-                    filtered: [...state.countriesList.filtered.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed)]
+                worldList: {
+                    ...state.worldList,
+                    filtered: [...state.worldList.filtered.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed)]
                 },
             }
 
-        case COUNTRY_FILTER_RECOVERED:
+        case WORLD_FILTER_RECOVERED:
             return {
                 ...state,
-                countriesList: {
-                    ...state.countriesList,
-                    filtered: [...state.countriesList.filtered.sort((a, b) => b.TotalRecovered - a.TotalRecovered)]
+                worldList: {
+                    ...state.worldList,
+                    filtered: [...state.countworldListriesList.filtered.sort((a, b) => b.TotalRecovered - a.TotalRecovered)]
                 },
             }
 
-        case COUNTRY_FILTER_DEATH:
+        case WORLD_FILTER_DEATH:
             return {
                 ...state,
-                countriesList: {
-                    ...state.countriesList,
-                    filtered: [...state.countriesList.filtered.sort((a, b) => b.TotalDeaths - a.TotalDeaths)]
+                worldList: {
+                    ...state.worldList,
+                    filtered: [...state.worldList.filtered.sort((a, b) => b.TotalDeaths - a.TotalDeaths)]
                 },
             }
 
-        case DAYS_FILTER_DEFAULT:
+        case COUNTRY_FILTER_DEFAULT:
             return {
                 ...state,
-                daysList: {
-                    ...state.daysList,
-                    filtered: [...state.daysList.original]
+                countryList: {
+                    ...state.countryList,
+                    filtered: [...state.countryList.original]
                 },
             }
 
-        case DAYS_FILTER_REVERSE:
+        case COUNTRY_FILTER_REVERSE:
             return {
                 ...state,
-                daysList: {
-                    ...state.daysList,
-                    filtered: [...state.daysList.filtered.reverse()]
+                countryList: {
+                    ...state.countryList,
+                    filtered: [...state.countryList.filtered.reverse()]
                 },
             }
 
