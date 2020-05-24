@@ -62,7 +62,7 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 worldList: {
                     ...state.worldList,
-                    filtered: [...state.countworldListriesList.filtered.sort((a, b) => b.TotalRecovered - a.TotalRecovered)]
+                    filtered: [...state.worldList.filtered.sort((a, b) => b.TotalRecovered - a.TotalRecovered)]
                 },
             }
 
