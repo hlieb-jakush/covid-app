@@ -1,34 +1,26 @@
-import React, { useState } from 'react'
+import React from 'react'
 import CountryFilter from './CountryFilter'
 import { connect } from 'react-redux'
 import { setCountryFilterDefault, setCountryFilterReverse } from '../../state/actionCreators'
+import { getCountryFilterType, getCountryDisplayType } from '../../state/selectors'
 
-const CountryFilterContainer = ({ setCountryFilterDefault, setCountryFilterReverse }) => {
-    const [activeButton, setActiveButton] = useState('default')
-
-    const setFilter = (func, name) => {
-        setActiveButton(name)
-        func()
-    }
-
-    const setDefaultFilter = () => {
-        setFilter(setCountryFilterDefault, 'default')
-    }
-
-    const setReverseFilter = () => {
-        setFilter(setCountryFilterReverse, 'reverse')
-    }
-
+const CountryFilterContainer = ({ displayType, filterType, setCountryFilterDefault, setCountryFilterReverse }) => {
     return (
         <CountryFilter
-            activeButton={activeButton}
-            setDefaultFilter={setDefaultFilter}
-            setReverseFilter={setReverseFilter}
+            displayType={displayType}
+            filterType={filterType}
+            setDefaultFilter={setCountryFilterDefault}
+            setReverseFilter={setCountryFilterReverse}
         />
     )
 }
 
-export default connect(null, {
+const mapStateToProps = (state) => ({
+    displayType: getCountryDisplayType(state),
+    filterType: getCountryFilterType(state)
+})
+
+export default connect(mapStateToProps, {
     setCountryFilterDefault,
     setCountryFilterReverse
 })(CountryFilterContainer)

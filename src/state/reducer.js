@@ -7,10 +7,13 @@ import {
 const initialState = {
     world: null,
     worldList: {
+        filterType: null,
         original: null,
         filtered: null
     },
     countryList: {
+        displayType: null,
+        filterType: null,
         original: null,
         filtered: null
     },
@@ -24,6 +27,7 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 world: { ...action.summary.Global },
                 worldList: {
+                    filterType: 'default',
                     original: [...action.summary.Countries],
                     filtered: [...action.summary.Countries]
                 },
@@ -34,6 +38,8 @@ const appReducer = (state = initialState, action) => {
             return {
                 ...state,
                 countryList: {
+                    displayType: 'list',
+                    filterType: 'default',
                     original: [...action.countryObj],
                     filtered: [...action.countryObj]
                 },
@@ -44,6 +50,7 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 worldList: {
                     ...state.worldList,
+                    filterType: 'default',
                     filtered: [...state.worldList.original]
                 },
             }
@@ -53,6 +60,7 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 worldList: {
                     ...state.worldList,
+                    filterType: 'confirmed',
                     filtered: [...state.worldList.filtered.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed)]
                 },
             }
@@ -62,6 +70,7 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 worldList: {
                     ...state.worldList,
+                    filterType: 'recovered',
                     filtered: [...state.worldList.filtered.sort((a, b) => b.TotalRecovered - a.TotalRecovered)]
                 },
             }
@@ -71,6 +80,7 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 worldList: {
                     ...state.worldList,
+                    filterType: 'death',
                     filtered: [...state.worldList.filtered.sort((a, b) => b.TotalDeaths - a.TotalDeaths)]
                 },
             }
@@ -80,6 +90,7 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 countryList: {
                     ...state.countryList,
+                    filterType: 'default',
                     filtered: [...state.countryList.original]
                 },
             }
@@ -89,6 +100,7 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 countryList: {
                     ...state.countryList,
+                    filterType: 'reverse',
                     filtered: [...state.countryList.filtered.reverse()]
                 },
             }
