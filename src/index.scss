@@ -102,6 +102,12 @@ body {
         color: white;
         background: lighten(#4D1ED3, 10%);
     }
+
+    &:disabled {
+      color: white;
+      background: lighten(#4D1ED3, 40%);
+      cursor: default;
+    }
   }
 }
 
