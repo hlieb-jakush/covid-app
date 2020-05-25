@@ -1,4 +1,5 @@
 import React from 'react'
+import FilterToggle from '../FilterToggle/FilterToggle'
 
 const CountryFilter = ({ displayType, filterType, setDefaultFilter, setReverseFilter }) => {
     return (
@@ -14,6 +15,7 @@ const CountryFilter = ({ displayType, filterType, setDefaultFilter, setReverseFi
                     onClick={setReverseFilter}
                 >Reverse</button>
             </span>
+            <FilterToggle displayType={displayType} />
         </section>
     )
 }
