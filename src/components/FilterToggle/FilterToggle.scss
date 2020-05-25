@@ -1,9 +1,9 @@
 .filter__toggle {
-    button:first-of-type{
+    a:first-of-type button{
         border-radius: 5px 0 0 5px;
     }
 
-    button:last-of-type{
+    a:last-of-type button{
         position: relative;
         right: 2px;
         margin-left: 0;

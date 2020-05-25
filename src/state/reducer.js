@@ -1,7 +1,8 @@
 import {
     INITIALIZATION, SET_COUNTRY,
     WORLD_FILTER_DEFAULT, WORLD_FILTER_CONFIRMED, WORLD_FILTER_RECOVERED, WORLD_FILTER_DEATH,
-    COUNTRY_FILTER_DEFAULT, COUNTRY_FILTER_REVERSE
+    COUNTRY_FILTER_DEFAULT, COUNTRY_FILTER_REVERSE,
+    SET_DISPLAY_TYPE_LIST, SET_DISPLAY_TYPE_CHART
 } from "./actions"
 
 const initialState = {
@@ -102,6 +103,24 @@ const appReducer = (state = initialState, action) => {
                     ...state.countryList,
                     filterType: 'reverse',
                     filtered: [...state.countryList.filtered.reverse()]
+                },
+            }
+
+        case SET_DISPLAY_TYPE_LIST:
+            return {
+                ...state,
+                countryList: {
+                    ...state.countryList,
+                    displayType: 'list'
+                },
+            }
+
+        case SET_DISPLAY_TYPE_CHART:
+            return {
+                ...state,
+                countryList: {
+                    ...state.countryList,
+                    displayType: 'chart'
                 },
             }
 
