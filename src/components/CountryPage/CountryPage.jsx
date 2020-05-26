@@ -3,6 +3,7 @@ import { Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import CountryFilterContainer from '../CountryFilter/CountryFilterContainer'
 import CountryListContainer from '../CountryList/CountryListContainer'
+import CountryChartContainer from '../CountryChart/CountryChartContainer'
 import { onSetCountry } from '../../state/thunks'
 
 const CountryPage = ({ match, onSetCountry }) => {
@@ -15,6 +16,7 @@ const CountryPage = ({ match, onSetCountry }) => {
         <>
             <CountryFilterContainer />
             <Route exact path='/:country/' render={() => <CountryListContainer />} />
+            <Route path='/:country/chart' render={() => <CountryChartContainer />} />
         </>
     )
 }
