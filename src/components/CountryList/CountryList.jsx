@@ -1,12 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import CountryListItem from '../CountryListItem/CountryListItem'
-import { withRouter } from 'react-router-dom'
 
-const CountryList = ({ countryList, onSetCountry, match, numberConverter, dateConverter }) => {
-
-    useEffect(() => {
-        onSetCountry(match.params.country)
-    }, [match.params.country])
+const CountryList = ({ countryList, numberConverter, dateConverter }) => {
 
     return (
         <section className='covid-app__section covid-app__section_list'>
@@ -28,4 +23,4 @@ const CountryList = ({ countryList, onSetCountry, match, numberConverter, dateCo
     )
 }
 
-export default withRouter(CountryList) 
+export default CountryList 
