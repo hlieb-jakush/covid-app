@@ -20,7 +20,6 @@ const WorldFilter = ({ activeButton, setDefaultFilter, setConfirmedFilter, setRe
             </span>
             <span>
                 <input placeholder='Country title...' />
-                <button className='covid-app__button'>Search</button>
             </span>
         </section>
     )
