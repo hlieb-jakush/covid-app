@@ -20,16 +20,37 @@ body {
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 80vw;
+  width: 98vw;
   max-width: 1200px;
-  height: 95vh;
+  height: 98vh;
 
   &__section {
-    padding: 20px;
     background-color: #FFFFFF;
     border: 1px solid #F1F1F1;
     border-radius: 5px;
     box-sizing: border-box;
+
+    @media screen 
+      and (max-device-width: 767px) {
+        padding: 10px;
+    }
+
+    @media screen 
+      and (min-device-width: 768px) 
+      and (max-device-width: 1023px) {
+        padding: 10px;
+    }
+
+    @media screen 
+      and (min-device-width: 1024px) 
+      and (max-device-width: 1199px) {
+        padding: 15px;
+    }
+
+    @media screen 
+      and (min-device-width: 1200px) {
+        padding: 20px;
+    }
 
     &_list {
       overflow: auto;
@@ -41,10 +62,57 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
+
+    @media screen 
+      and (max-device-width: 767px) {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    @media screen 
+      and (min-device-width: 768px) 
+      and (max-device-width: 1023px) {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    @media screen 
+      and (min-device-width: 1024px) 
+      and (max-device-width: 1199px) {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    @media screen 
+      and (min-device-width: 1200px) {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
   
     button {
-      margin-left: 10px;
+
+      @media screen 
+        and (max-device-width: 767px) {
+          margin-left: 5px;
+      }
+
+      @media screen 
+        and (min-device-width: 768px) 
+        and (max-device-width: 1023px) {
+          margin-left: 5px;
+      }
+
+      @media screen 
+        and (min-device-width: 1024px) 
+        and (max-device-width: 1199px) {
+          margin-left: 10px;
+      }
+
+      @media screen 
+        and (min-device-width: 1200px) {
+          margin-left: 15px;
+      }
+
     }
   }
 
@@ -52,15 +120,42 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    margin-bottom: 10px;
-    font-size: 14px;
     border: 1px solid #F1F1F1;
     border-radius: 5px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
     box-sizing: border-box;    
     transition: all 0.2s ease-in-out;
     cursor: pointer;  
+
+    @media screen 
+      and (max-device-width: 767px) {
+        margin-bottom: 5px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    @media screen 
+      and (min-device-width: 768px) 
+      and (max-device-width: 1023px) {       
+        margin-bottom: 5px;
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    @media screen 
+      and (min-device-width: 1024px) 
+      and (max-device-width: 1199px) {
+        margin-bottom: 10px;
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    @media screen 
+      and (min-device-width: 1200px) {
+        margin-bottom: 10px;
+        padding: 20px;
+        font-size: 15px;
+    }
 
     span:first-of-type {
         width: 100px;
@@ -79,7 +174,6 @@ body {
   }
 
   &__button {
-    padding: 10px 20px;
     box-sizing: border-box;
     border: 1px solid #EEF3F6;
     border-radius: 4px;
@@ -87,6 +181,32 @@ body {
     background-color: #FFFFFF;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
     cursor: pointer;
+
+    @media screen 
+        and (max-device-width: 767px) {
+          padding: 5px 10px;
+          font-size: 13px;
+    }
+
+    @media screen 
+      and (min-device-width: 768px) 
+      and (max-device-width: 1023px) {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    @media screen 
+      and (min-device-width: 1024px) 
+      and (max-device-width: 1199px) {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    @media screen 
+      and (min-device-width: 1200px) {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
 
     &_selected {
       color: white;
@@ -112,15 +232,41 @@ body {
 }
 
 input {
-  padding: 10px 20px;
   border-radius: 4px;
   border: 1px solid #EEF3F6;
   background-color: #FFFFFF;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
+
+  @media screen 
+    and (max-device-width: 767px) {
+      max-width: 120px;
+      padding: 5px 10px;
+      font-size: 13px;
+  }
   
-  
+  @media screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1023px) {
+      max-width: 120px;
+      padding: 5px 10px;
+      font-size: 13px;
+  }
+
+@media screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1199px) {
+    max-width: 150px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+@media screen 
+  and (min-device-width: 1200px) {
+    padding: 10px 20px;
+    font-size: 15px;
+}
 
   &:hover {
     border-width: 1px;
