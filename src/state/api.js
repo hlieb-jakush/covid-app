@@ -4,7 +4,7 @@ const instance = Axios.create({ baseURL: 'https://api.covid19api.com/' })
 
 const API = {
     getSummary() {
-        return instance.get('summary').then(response => response.data)
+        return instance.get('summary').then(response => response.data, error => API.getSummary())
     },
     getCountry(country) {
         return instance.get(`total/dayone/country/${country}`).then(response => response.data)
