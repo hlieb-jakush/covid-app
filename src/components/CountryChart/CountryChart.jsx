@@ -30,7 +30,7 @@ const CountryChart = ({ countryList, dateConverter }) => {
                 }]
             },
             options: {
-                responsive: false,
+                responsive: true,
                 elements: {
                     point: {
                         pointStyle: 'circle',
@@ -52,7 +52,7 @@ const CountryChart = ({ countryList, dateConverter }) => {
                 }
             }
         })
-    }, [])
+    }, [countryList])
 
     const chartRef = useRef(null)
 
