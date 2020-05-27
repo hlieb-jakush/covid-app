@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar/Sidebar'
 import Main from './components/Main/Main'
 import { getInitStatus, getWorld } from './state/selectors'
 import { numberConverter } from './tools/numberConverter'
+import Loader from './components/Loader/Loader'
 
 function App({ isInit, onInitialization, ...props }) {
 
@@ -12,7 +13,7 @@ function App({ isInit, onInitialization, ...props }) {
     onInitialization()
   }, [])
 
-  if (!isInit) return <div>Loading...</div>
+  if (!isInit) return <Loader />
 
   return (
     <div className='covid-app'>
