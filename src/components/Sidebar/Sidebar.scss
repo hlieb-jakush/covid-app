@@ -1,5 +1,6 @@
 .covid-app__sidebar {
     box-sizing: border-box;
+    overflow: auto;
 
     @media screen 
         and (max-device-width: 767px) {
