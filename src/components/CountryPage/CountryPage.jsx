@@ -10,7 +10,7 @@ const CountryPage = ({ match, onSetCountry }) => {
 
     useEffect(() => {
         onSetCountry(match.params.country)
-    }, [match.params.country])
+    }, [match.params.country, onSetCountry])
 
     return (
         <>

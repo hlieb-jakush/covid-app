@@ -11,7 +11,7 @@ function App({ isInit, onInitialization, ...props }) {
 
   useEffect(() => {
     onInitialization()
-  }, [])
+  }, [onInitialization])
 
   if (!isInit) return <Loader />
 

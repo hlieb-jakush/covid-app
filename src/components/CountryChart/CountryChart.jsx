@@ -52,7 +52,7 @@ const CountryChart = ({ countryList, dateConverter }) => {
                 }
             }
         })
-    }, [countryList])
+    }, [countryList, dateConverter])
 
     const chartRef = useRef(null)
 
