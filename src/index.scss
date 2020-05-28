@@ -157,15 +157,6 @@ body {
         font-size: 15px;
     }
 
-    span:first-of-type,
-    span:last-of-type {
-      flex-basis: 20%;
-    }
-
-    span {
-      flex-basis: 25%;
-    }
-
     &:hover {
       color: white;
       background: lighten(#4D1ED3, 20%);
