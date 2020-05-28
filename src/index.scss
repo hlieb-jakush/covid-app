@@ -31,24 +31,24 @@ body {
     box-sizing: border-box;
 
     @media screen 
-      and (max-device-width: 767px) {
+      and (max-width: 767px) {
         padding: 10px;
     }
 
     @media screen 
-      and (min-device-width: 768px) 
-      and (max-device-width: 1023px) {
+      and (min-width: 768px) 
+      and (max-width: 1023px) {
         padding: 10px;
     }
 
     @media screen 
-      and (min-device-width: 1024px) 
-      and (max-device-width: 1199px) {
+      and (min-width: 1024px) 
+      and (max-width: 1199px) {
         padding: 15px;
     }
 
     @media screen 
-      and (min-device-width: 1200px) {
+      and (min-width: 1200px) {
         padding: 20px;
     }
 
@@ -64,27 +64,27 @@ body {
     justify-content: space-between;
 
     @media screen 
-      and (max-device-width: 767px) {
+      and (max-width: 767px) {
         font-size: 13px;
         margin-bottom: 5px;
     }
 
     @media screen 
-      and (min-device-width: 768px) 
-      and (max-device-width: 1023px) {
+      and (min-width: 768px) 
+      and (max-width: 1023px) {
         font-size: 13px;
         margin-bottom: 5px;
     }
 
     @media screen 
-      and (min-device-width: 1024px) 
-      and (max-device-width: 1199px) {
+      and (min-width: 1024px) 
+      and (max-width: 1199px) {
         font-size: 15px;
         margin-bottom: 10px;
     }
 
     @media screen 
-      and (min-device-width: 1200px) {
+      and (min-width: 1200px) {
         font-size: 16px;
         margin-bottom: 15px;
     }
@@ -92,24 +92,24 @@ body {
     button {
 
       @media screen 
-        and (max-device-width: 767px) {
+        and (max-width: 767px) {
           margin-left: 5px;
       }
 
       @media screen 
-        and (min-device-width: 768px) 
-        and (max-device-width: 1023px) {
+        and (min-width: 768px) 
+        and (max-width: 1023px) {
           margin-left: 5px;
       }
 
       @media screen 
-        and (min-device-width: 1024px) 
-        and (max-device-width: 1199px) {
+        and (min-width: 1024px) 
+        and (max-width: 1199px) {
           margin-left: 10px;
       }
 
       @media screen 
-        and (min-device-width: 1200px) {
+        and (min-width: 1200px) {
           margin-left: 15px;
       }
 
@@ -128,30 +128,30 @@ body {
     cursor: pointer;  
 
     @media screen 
-      and (max-device-width: 767px) {
+      and (max-width: 767px) {
         margin-bottom: 5px;
         padding: 10px;
         font-size: 13px;
     }
 
     @media screen 
-      and (min-device-width: 768px) 
-      and (max-device-width: 1023px) {       
+      and (min-width: 768px) 
+      and (max-width: 1023px) {       
         margin-bottom: 5px;
         padding: 15px;
         font-size: 13px;
     }
 
     @media screen 
-      and (min-device-width: 1024px) 
-      and (max-device-width: 1199px) {
+      and (min-width: 1024px) 
+      and (max-width: 1199px) {
         margin-bottom: 10px;
         padding: 15px;
         font-size: 14px;
     }
 
     @media screen 
-      and (min-device-width: 1200px) {
+      and (min-width: 1200px) {
         margin-bottom: 10px;
         padding: 20px;
         font-size: 15px;
@@ -183,27 +183,27 @@ body {
     cursor: pointer;
 
     @media screen 
-        and (max-device-width: 767px) {
+        and (max-width: 767px) {
           padding: 5px 10px;
           font-size: 13px;
     }
 
     @media screen 
-      and (min-device-width: 768px) 
-      and (max-device-width: 1023px) {
+      and (min-width: 768px) 
+      and (max-width: 1023px) {
         padding: 5px 10px;
         font-size: 13px;
     }
 
     @media screen 
-      and (min-device-width: 1024px) 
-      and (max-device-width: 1199px) {
+      and (min-width: 1024px) 
+      and (max-width: 1199px) {
         padding: 10px 15px;
         font-size: 14px;
     }
 
     @media screen 
-      and (min-device-width: 1200px) {
+      and (min-width: 1200px) {
         padding: 10px 20px;
         font-size: 15px;
     }
@@ -240,30 +240,30 @@ input {
   box-sizing: border-box;
 
   @media screen 
-    and (max-device-width: 767px) {
+    and (max-width: 767px) {
       max-width: 120px;
       padding: 5px 10px;
       font-size: 13px;
   }
   
   @media screen 
-    and (min-device-width: 768px) 
-    and (max-device-width: 1023px) {
+    and (min-width: 768px) 
+    and (max-width: 1023px) {
       max-width: 120px;
       padding: 5px 10px;
       font-size: 13px;
   }
 
 @media screen 
-  and (min-device-width: 1024px) 
-  and (max-device-width: 1199px) {
+  and (min-width: 1024px) 
+  and (max-width: 1199px) {
     max-width: 150px;
     padding: 10px 15px;
     font-size: 14px;
 }
 
 @media screen 
-  and (min-device-width: 1200px) {
+  and (min-width: 1200px) {
     padding: 10px 20px;
     font-size: 15px;
 }

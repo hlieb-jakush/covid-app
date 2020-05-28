@@ -9,28 +9,28 @@
     cursor: pointer;
 
     @media screen 
-        and (min-device-width: 768px) 
-        and (max-device-width: 1023px) {
+        and (min-width: 768px) 
+        and (max-width: 1023px) {
             padding: 10px;
             margin-bottom: 10px;
     }
 
     @media screen 
-        and (min-device-width: 1024px) 
-        and (max-device-width: 1199px) {
+        and (min-width: 1024px) 
+        and (max-width: 1199px) {
             padding: 15px;
             margin-bottom: 15px;
     }
 
     @media screen 
-        and (min-device-width: 1200px) {
+        and (min-width: 1200px) {
             padding: 15px;
             margin-bottom: 15px;
     }
 
     @media screen 
-        and (min-device-width: 1200px)
-        and (min-device-height: 800px) {
+        and (min-width: 1200px)
+        and (min-height: 800px) {
             padding: 15px;
             margin-bottom: 20px;
     }
