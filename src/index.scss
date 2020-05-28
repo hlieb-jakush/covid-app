@@ -157,19 +157,23 @@ body {
         font-size: 15px;
     }
 
-    span:first-of-type {
-        width: 100px;
-        text-align: center;
+    span:first-of-type,
+    span:last-of-type {
+      flex-basis: 20%;
+    }
+
+    span {
+      flex-basis: 25%;
     }
 
     &:hover {
-        color: white;
-        background: lighten(#4D1ED3, 20%);
+      color: white;
+      background: lighten(#4D1ED3, 20%);
     }
 
     &:active {
-        color: white;
-        background: lighten(#4D1ED3, 10%);
+      color: white;
+      background: lighten(#4D1ED3, 10%);
     }
   }
 
@@ -183,9 +187,9 @@ body {
     cursor: pointer;
 
     @media screen 
-        and (max-width: 767px) {
-          padding: 5px 10px;
-          font-size: 13px;
+      and (max-width: 767px) {
+        padding: 5px 10px;
+        font-size: 13px;
     }
 
     @media screen 
@@ -274,7 +278,7 @@ input {
   }
 
   &:active {
-      border-color: lighten(#4D1ED3, 10%);
+    border-color: lighten(#4D1ED3, 10%);
   }
 }
 
