@@ -19,7 +19,7 @@ const WorldFilter = ({ activeButton, setDefaultFilter, setConfirmedFilter, setRe
                     onClick={setDeathFilter}>Deaths</button>
             </span>
             <span>
-                <input placeholder='Country title...' />
+                <input placeholder='Search country...' />
             </span>
         </section>
     )
