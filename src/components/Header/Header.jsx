@@ -1,19 +1,13 @@
 import React from 'react'
-import ListItemValue from '../ListItemValue/ListItemValue'
 import './Header.scss'
 
 const Header = ({ icon, world, numberConverter }) => {
     return (
         <header className='covid-app__section covid-app__header'>
-            <button
-                className={`covid-app__button`}
-            >
-                Menu
-            </button>
-            <ListItemValue img={icon} alt='flag' />
-            <ListItemValue text={'Confirmed:'} totalData={world.TotalConfirmed} newData={world.NewConfirmed} numberConverter={numberConverter} isColumn />
-            <ListItemValue text={'Recovered:'} totalData={world.TotalRecovered} newData={world.NewRecovered} numberConverter={numberConverter} isColumn />
-            <ListItemValue text={'Deaths:'} totalData={world.TotalDeaths} newData={world.NewDeaths} numberConverter={numberConverter} isColumn />
+            <img src={icon} alt='flag' />
+            <span>Confirmed: {numberConverter(world.TotalConfirmed)} (+{numberConverter(world.NewConfirmed)})</span>
+            <span>Recovered: {numberConverter(world.TotalRecovered)} (+{numberConverter(world.NewRecovered)})</span>
+            <span>Deaths: {numberConverter(world.TotalDeaths)} (+{numberConverter(world.NewDeaths)})</span>
         </header>
     )
 }
