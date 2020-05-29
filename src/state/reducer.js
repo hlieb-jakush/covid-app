@@ -2,7 +2,8 @@ import {
     INITIALIZATION, SET_COUNTRY,
     WORLD_FILTER_DEFAULT, WORLD_FILTER_CONFIRMED, WORLD_FILTER_RECOVERED, WORLD_FILTER_DEATH,
     COUNTRY_FILTER_DEFAULT, COUNTRY_FILTER_REVERSE,
-    SET_DISPLAY_TYPE_LIST, SET_DISPLAY_TYPE_CHART
+    SET_DISPLAY_TYPE_LIST, SET_DISPLAY_TYPE_CHART,
+    SET_SIDEBAR_OPEN, SET_SIDEBAR_CLOSE
 } from "./actions"
 
 const initialState = {
@@ -18,6 +19,7 @@ const initialState = {
         original: null,
         filtered: null
     },
+    isSidebarOpen: false,
     isInit: false
 }
 
@@ -43,7 +45,7 @@ const appReducer = (state = initialState, action) => {
                     filterType: 'default',
                     original: [...action.countryObj],
                     filtered: [...action.countryObj]
-                },
+                }
             }
 
         case WORLD_FILTER_DEFAULT:
@@ -53,7 +55,7 @@ const appReducer = (state = initialState, action) => {
                     ...state.worldList,
                     filterType: 'default',
                     filtered: [...state.worldList.original]
-                },
+                }
             }
 
         case WORLD_FILTER_CONFIRMED:
@@ -63,7 +65,7 @@ const appReducer = (state = initialState, action) => {
                     ...state.worldList,
                     filterType: 'confirmed',
                     filtered: [...state.worldList.filtered.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed)]
-                },
+                }
             }
 
         case WORLD_FILTER_RECOVERED:
@@ -73,7 +75,7 @@ const appReducer = (state = initialState, action) => {
                     ...state.worldList,
                     filterType: 'recovered',
                     filtered: [...state.worldList.filtered.sort((a, b) => b.TotalRecovered - a.TotalRecovered)]
-                },
+                }
             }
 
         case WORLD_FILTER_DEATH:
@@ -83,7 +85,7 @@ const appReducer = (state = initialState, action) => {
                     ...state.worldList,
                     filterType: 'death',
                     filtered: [...state.worldList.filtered.sort((a, b) => b.TotalDeaths - a.TotalDeaths)]
-                },
+                }
             }
 
         case COUNTRY_FILTER_DEFAULT:
@@ -93,7 +95,7 @@ const appReducer = (state = initialState, action) => {
                     ...state.countryList,
                     filterType: 'default',
                     filtered: [...state.countryList.original]
-                },
+                }
             }
 
         case COUNTRY_FILTER_REVERSE:
@@ -103,7 +105,7 @@ const appReducer = (state = initialState, action) => {
                     ...state.countryList,
                     filterType: 'reverse',
                     filtered: [...state.countryList.filtered.reverse()]
-                },
+                }
             }
 
         case SET_DISPLAY_TYPE_LIST:
@@ -112,7 +114,7 @@ const appReducer = (state = initialState, action) => {
                 countryList: {
                     ...state.countryList,
                     displayType: 'list'
-                },
+                }
             }
 
         case SET_DISPLAY_TYPE_CHART:
@@ -121,7 +123,19 @@ const appReducer = (state = initialState, action) => {
                 countryList: {
                     ...state.countryList,
                     displayType: 'chart'
-                },
+                }
+            }
+
+        case SET_SIDEBAR_OPEN:
+            return {
+                ...state,
+                isSidebarOpen: true
+            }
+
+        case SET_SIDEBAR_CLOSE:
+            return {
+                ...state,
+                isSidebarOpen: false
             }
 
         default:

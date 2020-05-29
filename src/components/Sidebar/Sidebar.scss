@@ -1,6 +1,5 @@
 .covid-app__sidebar {
-    flex-grow: 1;
-    flex-shrink: 2;
+    flex-basis: 25%;
     box-sizing: border-box;
     overflow: auto;
 
@@ -29,5 +28,25 @@
     .selected .sidebar__button{
         color: white;
         background: lighten(#4D1ED3, 10%);
+    }
+
+    .covid-app__button_close-btn {
+        display: none;
+    }
+
+    &_mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+
+        .covid-app__button_close-btn {
+            display: inline-block;
+            padding: 10px;
+            font-size: 14px;
+        }
     }
 }

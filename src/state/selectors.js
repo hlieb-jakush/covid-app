@@ -33,3 +33,7 @@ export const getCountryListOriginal = (state) => {
 export const getCountryListFiltered = (state) => {
     return state.countryList.filtered
 }
+
+export const getSidebarStatus = (state) => {
+    return state.isSidebarOpen
+}
