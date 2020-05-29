@@ -2,12 +2,10 @@ import React from 'react'
 import ListItemValue from '../ListItemValue/ListItemValue'
 import './Header.scss'
 
-const Header = ({ icon, world, numberConverter }) => {
+const Header = ({ icon, world, setSidebarOpen, numberConverter }) => {
     return (
         <header className='covid-app__section covid-app__header'>
-            <button
-                className={`covid-app__button`}
-            >
+            <button className='covid-app__button covid-app__button_selected' onClick={setSidebarOpen}>
                 Menu
             </button>
             <ListItemValue img={icon} alt='flag' />

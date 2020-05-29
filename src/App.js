@@ -3,11 +3,12 @@ import { connect } from 'react-redux'
 import { onInitialization, onSetCountry } from './state/thunks'
 import Sidebar from './components/Sidebar/Sidebar'
 import Main from './components/Main/Main'
-import { getInitStatus, getWorld } from './state/selectors'
+import { getInitStatus, getWorld, getSidebarStatus } from './state/selectors'
 import { numberConverter } from './tools/numberConverter'
 import Loader from './components/Loader/Loader'
+import { setSidebarOpen, setSidebarClose } from './state/actionCreators'
 
-function App({ isInit, onInitialization, ...props }) {
+function App({ isInit, onInitialization, isSidebarOpen, setSidebarOpen, setSidebarClose, ...props }) {
 
   useEffect(() => {
     onInitialization()
@@ -17,15 +18,16 @@ function App({ isInit, onInitialization, ...props }) {
 
   return (
     <div className='covid-app'>
-      <Sidebar />
-      <Main {...props} numberConverter={numberConverter} />
+      <Sidebar isSidebarOpen={isSidebarOpen} setSidebarClose={setSidebarClose} />
+      <Main {...props} numberConverter={numberConverter} setSidebarOpen={setSidebarOpen} />
     </div>
   )
 }
 
 const mapStateToProps = (state) => ({
   isInit: getInitStatus(state),
-  world: getWorld(state)
+  world: getWorld(state),
+  isSidebarOpen: getSidebarStatus(state)
 })
 
-export default connect(mapStateToProps, { onInitialization, onSetCountry })(App)
+export default connect(mapStateToProps, { onInitialization, onSetCountry, setSidebarOpen, setSidebarClose })(App)

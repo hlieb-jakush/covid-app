@@ -7,12 +7,13 @@ import worldIcon from '../../assets/flags/united-nations.svg'
 import './Main.scss'
 
 
-const Main = ({ world, numberConverter }) => {
+const Main = ({ world, numberConverter, setSidebarOpen }) => {
     return (
         <main className='covid-app__main'>
             <Header
                 icon={worldIcon}
                 world={world}
+                setSidebarOpen={setSidebarOpen}
                 numberConverter={numberConverter}
             />
             <Route exact path='/' render={() => <WorldPage />} />
