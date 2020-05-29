@@ -5,9 +5,9 @@ const WorldListItem = ({ Country, TotalConfirmed, NewConfirmed, TotalDeaths, New
     return (
         <section className='covid-app__list-item'>
             <ListItemValue text={Country} />
-            <ListItemValue text={'Confirmed:'} totalData={TotalConfirmed} newData={NewConfirmed} numberConverter={numberConverter} />
-            <ListItemValue text={'Recovered:'} totalData={TotalRecovered} newData={NewRecovered} numberConverter={numberConverter} />
-            <ListItemValue text={'Deaths:'} totalData={TotalDeaths} newData={NewDeaths} numberConverter={numberConverter} />
+            <ListItemValue text={'Confirmed:'} totalData={TotalConfirmed} newData={NewConfirmed} numberConverter={numberConverter} isColumn />
+            <ListItemValue text={'Recovered:'} totalData={TotalRecovered} newData={NewRecovered} numberConverter={numberConverter} isColumn />
+            <ListItemValue text={'Deaths:'} totalData={TotalDeaths} newData={NewDeaths} numberConverter={numberConverter} isColumn />
         </section>
     )
 }

@@ -64,6 +64,13 @@ body {
     justify-content: space-between;
 
     @media screen 
+      and (max-width: 419px) {
+        font-size: 11px;
+        margin-bottom: 5px;  
+    }
+
+    @media screen 
+      and (min-width: 420px)
       and (max-width: 767px) {
         font-size: 13px;
         margin-bottom: 5px;
@@ -178,6 +185,13 @@ body {
     cursor: pointer;
 
     @media screen 
+      and (max-width: 419px) {
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+
+    @media screen 
+      and (min-width: 420px)
       and (max-width: 767px) {
         padding: 5px 10px;
         font-size: 13px;
@@ -236,9 +250,7 @@ input {
 
   @media screen 
     and (max-width: 767px) {
-      max-width: 120px;
-      padding: 5px 10px;
-      font-size: 13px;
+      display: none;
   }
   
   @media screen 
