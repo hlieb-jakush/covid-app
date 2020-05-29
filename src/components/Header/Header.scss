@@ -1,13 +1,23 @@
 .covid-app__header {
     display: flex;
-    align-items: center;
     justify-content: space-around;
-    font-weight: 500;
 
+    .list-item__value:first-of-type {
+        flex-basis: 10%;
+    }
+
+    .list-item__value:not(:first-of-type) {
+        flex-basis: 25%;
+    }
+    
     @media screen 
         and (max-width: 767px) {
-            font-size: 13px;
-            margin-bottom: 10px;
+        font-size: 13px;
+        margin-bottom: 10px;     
+        
+        .list-item__value:first-of-type {
+            display: none;
+        }
     }
 
     @media screen 
@@ -59,44 +69,12 @@
         }
     }
 
-    span {
+    button {
+        display: none;
 
         @media screen 
             and (max-width: 767px) {
-                padding-bottom: 3px;
-                border-bottom: 2px solid;
+                display: inline-block;
         }
-
-        @media screen 
-            and (min-width: 768px) 
-            and (max-width: 1023px) {
-                padding-bottom: 5px;
-                border-bottom: 2px solid;
-        }
-
-        @media screen 
-            and (min-width: 1024px) 
-            and (max-width: 1199px) {
-                padding-bottom: 8px;
-                border-bottom: 3px solid;
-        }
-
-        @media screen 
-            and (min-width: 1200px) {
-                padding-bottom: 10px;
-                border-bottom: 3px solid;
-        }
-    }
-
-    span:nth-of-type(1) {
-        border-color: #4D1ED3;
-    }
-
-    span:nth-of-type(2) {
-        border-color: #72EBBA;
-    }
-
-    span:nth-of-type(3) {
-        border-color: #FC1946;
     }
 }
